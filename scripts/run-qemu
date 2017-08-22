@@ -96,6 +96,8 @@ class QemuCommand(object):
             cmdline.append('-nographic')
         if self.kvm:
             cmdline.append('-enable-kvm')
+        else:
+            cmdline += ['-cpu', 'Haswell']
         return cmdline
 
 
